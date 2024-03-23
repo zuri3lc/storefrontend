@@ -2,7 +2,7 @@
     --Futura: book;
     --bold: 900;
     --p: #9c27B0;
-    --poscuro: #89119D;
+    --poscuro: rgba(0, 0, 0, .28);
     --s: #ffce00;
     --soscuro: rgb(233,287,2);
     --bco: #fff;
@@ -21,6 +21,8 @@ body {
     height: 100vh;
     font-size: 1.6rem;
     line-height: 1.5;
+    font-family: var(--Futura);
+    text-transform: uppercase;
 }
 p {
     font-size: 1.8rem;
@@ -42,15 +44,52 @@ h1, h2, h3 {
     color: var(--s);
 }
 h1 {
-font-size: 4rem;
+font-size: 3rem;
+font-weight: var(--bold);
 }
 h2 {
-    font-size: 3.2rem;
+    font-size: 3rem;
 }
 h3 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 }
 @font-face {
     font-family: book;
     src: url(../font/Futura/Futura-Book.otf);
 }
+.header { /** se convierte en un bloque porque no requiere otro elemento para darle estilos*/
+    display: flex;
+    justify-content: center;
+}
+.header__logo { /** este es un elemento pues depende el bloque al que pertenece para posicionarse */
+    margin: 3rem 0;
+}
+/*Todo Navegacion*/
+.navegacion {
+    background-color: var(--poscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+.navegacion__enlace {
+    font-family: var(--Futura);
+    color: var(--bco);
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: var(--bold);
+}
+.navegacion__enlace--activo,/** este es un modificador, este se encarga de modificar un elemento dentro de un bloque*/
+.navegacion__enlace:hover {
+    color: var(--s);
+}
+
+/*Todo footer */
+    .footer{
+background-color: var(--poscuro);
+padding: 0.5rem 0;
+margin: 2rem 0;
+    }
+    .footer__texto{
+text-align: center;
+    }
